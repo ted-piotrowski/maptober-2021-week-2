@@ -86,3 +86,6 @@ Solved: Ignored these activities.
 
 Problem: Mapbox only allows primitive values in tile delimited JSON, while Strava uses arrays and objects. For example `{ start_lat_lng: [12, -122.2]}`. 
 Solved: Put everything in one FeatureCollection and MTS automatically converted to valid tile delimited JSON.
+
+Problem: When updating Mapbox recipe, Mapbox studio does not always update the rendering or hide attribute names per recipe instructions
+Solved: Not sure
