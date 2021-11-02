@@ -1,0 +1,6 @@
+.env
+node_modules
+activities
+ted-activities
+*.js
+

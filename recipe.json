@@ -1,0 +1,48 @@
+{
+	"version": 1,
+	"layers": {
+		"maptober-strava-ted": {
+			"source": "mapbox://tileset-source/tppiotrowski/strava-ted",
+			"minzoom": 0,
+			"maxzoom": 5,
+			"features": {
+				"attributes": {
+					"set": {
+						"distance_miles": [
+							"*",
+							[
+								"get",
+								"distance"
+							],
+							0.000621371
+						],
+						"elevation_gain_feet": [
+							"*",
+							[
+								"get",
+								"total_elevation_gain"
+							],
+							3.28084
+						],
+						"total_time_hours": [
+							"/",
+							[
+								"get",
+								"elapsed_time"
+							],
+							3600
+						]
+					},
+					"allowed_output": [
+						"distance",
+						"elapsed_time",
+						"total_elevation_gain",
+						"distance_miles",
+						"elevation_gain_feet",
+						"total_time_hours"
+					]
+				}
+			}
+		}
+	}
+}
