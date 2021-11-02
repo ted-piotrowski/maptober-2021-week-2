@@ -27,9 +27,9 @@ Each activity will download into the `/activities` directory as an individual fi
 
 ## Combine activities into one GeoJSON
 
-Pass the name of the activities directory as an argument to `combine.js`. This script will also add a line from Bothell to the start of each activity.
+Pass the name of the activities directory as an argument to `combine.js` along with activity type `Run` and the desired output file `run.js`. This script will also add a line from Bothell to the start of each activity.
 
-`./node_modules/.bin/tsc combine.ts && node combine.js activities`
+`./node_modules/.bin/tsc combine.ts && node combine.js activities Run run.json`
 
 ## Upload to Mapbox Tiling Service (MTS)
 

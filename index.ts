@@ -8,12 +8,14 @@ require('dotenv').config();
 const DIR_NAME = process.argv[2] || 'activities';
 
 const jan1st2021 = new Date("2021-01-01");
+const jan1st2020 = new Date("2020-01-01");
 
 const main = async (strava: Strava) => {
 	const files = fs.readdirSync(DIR_NAME).map(filename => parseInt(filename));
 	console.log('Fetching athlete activities');
 	const activities = await strava.activities.getLoggedInAthleteActivities({
-		after: jan1st2021.getTime() / 1000,
+		before: jan1st2021.getTime() / 1000,
+		after: jan1st2020.getTime() / 1000,
 		per_page: 200, // bump this up later
 	});
 	console.log(`Found ${activities.length} activities`);
