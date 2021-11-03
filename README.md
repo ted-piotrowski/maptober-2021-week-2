@@ -36,15 +36,15 @@ Pass the name of the activities directory as an argument to `combine.js` along w
 Setup:
 
 ```
-pip3 install mapbox-tilesets
-export MAPBOX_ACCESS_TOKEN=
+> pip3 install mapbox-tilesets
+> export MAPBOX_ACCESS_TOKEN=
 ```
 
 
 Validate GeoJSON:
 
 ```
-tilesets validate-source ted-activites/combined.json
+> tilesets validate-source ted-activites/combined.json
 ```
 
 Upload source: 
