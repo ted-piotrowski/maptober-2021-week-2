@@ -33,11 +33,19 @@ Pass the name of the activities directory as an argument to `combine.js` along w
 
 ## Upload to Mapbox Tiling Service (MTS)
 
-`pip3 install mapbox-tilesets`
+Setup:
 
-export MAPBOX_
+```
+pip3 install mapbox-tilesets
+export MAPBOX_ACCESS_TOKEN=
+```
 
-Confirm that combined.json is valid line-delimited GeoJSON `tilesets validate-source ted-activites/combined.json` (Always fails even if it's valid)
+
+Validate GeoJSON:
+
+```
+tilesets validate-source ted-activites/combined.json
+```
 
 Upload source: 
 
@@ -84,8 +92,8 @@ Solved: Downloaded activities over several hours.
 Problem: Some Strava activities like gym workouts, rock climbing, manual entries will not have LatLng coordinates. 
 Solved: Ignored these activities.
 
-Problem: Mapbox only allows primitive values in tile delimited JSON, while Strava uses arrays and objects. For example `{ start_lat_lng: [12, -122.2]}`. 
-Solved: Put everything in one FeatureCollection and MTS automatically converted to valid tile delimited JSON.
+Problem: Mapbox only allows primitive values in line-delimited GeoJSON, while Strava uses arrays and objects. For example `{ start_lat_lng: [12, -122.2]}`. 
+Solved: Put everything in one FeatureCollection and MTS automatically converted to valid line-delimited GeoJSON.
 
 Problem: When updating Mapbox recipe, Mapbox studio does not always update the rendering or hide attribute names per recipe instructions
 Solved: Not sure
